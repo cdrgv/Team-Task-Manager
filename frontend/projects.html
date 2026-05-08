@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Projects - Team Task Manager</title>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <h2>Team Task Manager</h2>
+        <div class="nav-links">
+            <a href="dashboard.html" class="nav-link">Dashboard</a>
+            <a href="projects.html" class="nav-link active">Projects</a>
+            <a href="tasks.html" class="nav-link">Tasks</a>
+            <button id="logoutBtnProjects" class="logout-btn">Logout</button>
+        </div>
+    </nav>
+
+    <div class="container">
+        <div class="header-section">
+            <h2>My Projects</h2>
+            <button id="addProjectBtn" class="add-btn">+ New Project</button>
+        </div>
+
+        <div id="projectForm" class="form-overlay" style="display: none;">
+            <div class="form-container">
+                <h3 id="formTitle">New Project</h3>
+                <form id="projectFormElement">
+                    <input type="hidden" id="projectId">
+                    <input type="text" id="projectName" placeholder="Project Name *" required>
+                    <textarea id="projectDesc" placeholder="Description"></textarea>
+                    
+                    <label>Team Members:</label>
+                    <div id="teamMembersContainer">
+                        <div class="team-input-row">
+                            <input type="email" class="team-email" placeholder="Team Member Email">
+                            <button type="button" class="remove-member" style="display:none;">×</button>
+                        </div>
+                    </div>
+                    <button type="button" id="addMemberBtn">+ Add Member</button>
+                    
+                    <div class="form-actions">
+                        <button type="submit">Create Project</button>
+                        <button type="button" id="cancelProject">Cancel</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+
+        <div id="projectsList" class="project-grid"></div>
+    </div>
+    <script src="js/projects.js"></script>
+</body>
+</html>
